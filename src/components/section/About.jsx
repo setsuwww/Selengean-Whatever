@@ -1,3 +1,5 @@
+import { SectionBadge } from "../ui/section-badge";
+
 export default function About() {
     return (
         <section className="px-6 py-24 sm:px-10 lg:px-16">
@@ -20,11 +22,7 @@ export default function About() {
 
                 {/* Text */}
                 <div className="max-w-xl">
-                    <div className="mb-7 inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-black/50">
-                        <span className="h-2 w-2 rounded-full bg-[#c8102e] shadow-[0_0_0_4px_rgba(200,16,46,0.08)]" />
-
-                        <span>Siapa itu Katir?</span>
-                    </div>
+                    <SectionBadge text="Siapa itu Katir?" />
 
                     <h2 className="text-4xl font-medium leading-[0.95] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
                         Sekilas tentang
@@ -56,7 +54,7 @@ export default function About() {
                         </p>
                     </div>
 
-                    <div className="mt-12 border-t border-black/10 pt-5">
+                    <div className="hidden md:block mt-12 border-t border-black/10 pt-5">
                         <div className="flex items-center justify-between font-mono text-[8px] uppercase tracking-[0.18em] text-black/35">
                             <span>Drawing / Writing / Music</span>
                             <span>Science / Physics / Biology / Astronomy / Philosophy</span>
