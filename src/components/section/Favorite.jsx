@@ -1,4 +1,6 @@
+import { ArrowUpRight } from "lucide-react";
 import { SectionBadge } from "../ui/section-badge";
+import { SectionTitle } from "../ui/section-title";
 
 export default function Favorite() {
     const foods = [
@@ -18,19 +20,19 @@ export default function Favorite() {
 
     const music = [
         {
-            image: "/favorite-band-1.jpg",
+            image: "/album/surfacing.avif",
             band: "Slipknot",
-            song: "Psychosocial",
+            song: "Surfacing",
         },
         {
-            image: "/favorite-band-2.jpg",
-            band: "Sevendust",
-            song: "Black",
-        },
-        {
-            image: "/favorite-band-3.jpg",
+            image: "/album/poa.avif",
             band: "Linkin Park",
-            song: "Figure.09",
+            song: "Point of Authority",
+        },
+        {
+            image: "/album/sof.avif",
+            band: "Avenged Sevenfold",
+            song: "Shepherd of Fire",
         },
     ];
 
@@ -40,40 +42,28 @@ export default function Favorite() {
 
                 {/* Section Header */}
                 <div className="mb-20 border-b border-black/15 pb-5">
-                    <SectionBadge text="Personal Favorite" />
+                    <SectionBadge text="Apa si Favorit gua?" />
 
-                    <div className="mt-2 flex items-end justify-between">
-                        <h2 className="text-5xl font-medium leading-none tracking-[-0.05em] sm:text-6xl lg:text-7xl">
-                            Things I
-                            <span className="text-[#c8102e]"> love.</span>
-                        </h2>
+                    <SectionTitle blackTitle="Favorit" redTitle="Gua" />
 
-                        <span className="hidden font-mono text-[9px] uppercase tracking-[0.2em] text-black/35 sm:block">
-                            A few things that keep me going
-                        </span>
-                    </div>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/40">
+                        03 — Favorite Things
+                    </span>
                 </div>
 
                 {/* Favorites */}
                 <div className="grid lg:grid-cols-2">
-
-                    {/* ===================== */}
                     {/* DRINK & FOOD */}
-                    {/* ===================== */}
                     <div className="border-b border-black/15 pb-20 lg:border-r lg:border-b-0 lg:pr-16">
 
                         <div className="mb-8">
-                            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/35">
-                                01
-                            </p>
-
                             <h3 className="mt-2 text-2xl font-medium tracking-tight">
                                 Favorite Drink & Food
                             </h3>
                         </div>
 
                         {/* Images */}
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid max-w-[80%] grid-cols-3 gap-3">
                             {foods.map((food) => (
                                 <div
                                     key={food.name}
@@ -85,7 +75,6 @@ export default function Favorite() {
                                         className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                                     />
 
-                                    {/* Overlay */}
                                     <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-transparent to-transparent p-3 opacity-0 transition duration-300 group-hover:opacity-100">
                                         <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-white">
                                             {food.name}
@@ -108,23 +97,16 @@ export default function Favorite() {
                     </div>
 
 
-                    {/* ===================== */}
                     {/* BAND & MUSIC */}
-                    {/* ===================== */}
                     <div className="pt-20 lg:pl-16 lg:pt-0">
-
                         <div className="mb-8">
-                            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/35">
-                                02
-                            </p>
-
                             <h3 className="mt-2 text-2xl font-medium tracking-tight">
                                 Favorite Band & Music
                             </h3>
                         </div>
 
                         {/* Images */}
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid max-w-[80%] grid-cols-3 gap-3">
                             {music.map((item) => (
                                 <div
                                     key={item.band}
@@ -132,7 +114,7 @@ export default function Favorite() {
                                 >
                                     <img
                                         src={item.image}
-                                        alt={`${item.band} — ${item.song} `}
+                                        alt={`${item.band} — ${item.song}`}
                                         className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                                     />
                                 </div>
@@ -147,7 +129,7 @@ export default function Favorite() {
                                     className="flex items-center justify-between border-b border-black/10 py-4"
                                 >
                                     <div className="flex items-center gap-5">
-                                        <span className="font-mono text-[9px] text-black/30">
+                                        <span className="font-mono text-[9px] text-white p-2 bg-blue-500">
                                             0{index + 1}
                                         </span>
 
@@ -162,9 +144,7 @@ export default function Favorite() {
                                         </div>
                                     </div>
 
-                                    <span className="font-mono text-[9px] text-black/25">
-                                        ↗
-                                    </span>
+                                    <ArrowUpRight className="text-gray-300" />
                                 </div>
                             ))}
                         </div>
@@ -172,59 +152,37 @@ export default function Favorite() {
                 </div>
 
 
-                {/* ===================== */}
                 {/* FAVORITE PERSON */}
-                {/* ===================== */}
                 <div className="mt-24 border-t border-black/15 pt-5">
-
-                    <div className="mb-10 flex items-end justify-between">
-                        <div>
-                            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#c8102e]">
-                                03
-                            </p>
-
-                            <h3 className="mt-2 text-2xl font-medium tracking-tight">
-                                Favorite Person
-                            </h3>
-                        </div>
-
-                        <span className="hidden font-mono text-[9px] uppercase tracking-[0.15em] text-black/30 sm:block">
-                            One Person / One Story
-                        </span>
-                    </div>
-
                     {/* Ayu */}
-                    <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+                    <div className="mt-6 lg:mt-10 grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
 
                         {/* Description */}
-                        <div className="max-w-md">
+                        <div className="max-w-lg">
+                            <h3 className="mt-8 text-2xl font-medium tracking-tight">
+                                Favorite Person
+                            </h3>
 
-                            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/35">
-                                About Ayu
+                            <SectionTitle blackTitle="Orang dibalik " redTitle="Selengean gua" className="mt-6" />
+
+                            <p className="mt-6 text-sm leading-7 text-black/55 sm:text-base">
+                                Ayu orang yang bikin hari-hari biasa terasa lebih spesial.
+                                Bareng dia, hal-hal random, receh,
+                                bahkan hal kecil yang sebenarnya nggak penting bisa jadi sesuatu yang bakal gw inget.
                             </p>
 
-                            <h4 className="mt-5 text-4xl font-medium leading-[0.95] tracking-[-0.04em] sm:text-5xl">
-                                Someone who makes
-                                <span className="text-[#c8102e]">
-                                    {" "}ordinary days memorable.
-                                </span>
-                            </h4>
-
-                            <p className="mt-8 text-sm leading-7 text-black/55 sm:text-base">
-                                Ayu is someone who became a meaningful part of
-                                my everyday life. From random conversations and
-                                stupid jokes to quiet moments that don't really
-                                need an explanation, somehow the little things
-                                become the memories I remember the most.
+                            <p className="mt-4 text-sm leading-7 text-black/55 sm:text-base">
+                                Dia juga salah satu orang yang paling nyaman buat gw ajak jadi diri gw sendiri.
+                                Gw bisa ngoceh soal hal random, ngomongin sains berjam-jam, bercanda nggak jelas,
+                                atau sekadar diem bareng dia. Dan entah gimana, dia tetap sabar ngadepin semua sisi selengean gw
                             </p>
 
-                            <p className="mt-5 text-sm leading-7 text-black/55 sm:text-base">
-                                She has a way of reminding me to spend my time
-                                on things that actually matter, to think before
-                                wasting what I have, and to appreciate the
-                                people around me. Maybe that's what makes a
-                                person special — not always the big moments,
-                                but the small ones that stay.
+                            <p className="mt-4 text-sm leading-7 text-black/55 sm:text-base">
+                                Dia sering nanya, “Aku cantik nggak?”
+
+                                Masalahnya, gw juga bingung harus jawab apa. Karena kapan dia nggak cantik?
+
+                                Ayu, I love you.
                             </p>
 
                             <div className="mt-10 border-t border-black/10 pt-5">
@@ -235,22 +193,92 @@ export default function Favorite() {
                         </div>
 
                         {/* Image */}
-                        <div className="group relative mx-auto w-full max-w-[520px] overflow-hidden bg-black/5 lg:mx-0 lg:ml-auto">
+                        <div className="group relative mx-auto w-full max-w-[620px] overflow-hidden bg-black/5 lg:mx-0 lg:ml-auto">
+                            {/* Image */}
                             <img
                                 src="/ayu.jpg"
                                 alt="Ayu"
-                                className="max-h-[520px] w-full object-cover grayscale transition duration-700 group-hover:scale-[1.02] group-hover:grayscale-0"
+                                className="h-[500px] w-full object-cover grayscale transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
                             />
 
-                            <div className="absolute bottom-5 left-5">
-                                <span className="bg-[#c8102e] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.2em] text-black">
-                                    Ayu
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+
+                            {/* Default Label */}
+                            <div className="absolute bottom-5 left-5 transition duration-500 group-hover:translate-y-3 group-hover:opacity-0">
+                                <span className="bg-maroon px-3 py-2 font-mono text-[9px] uppercase tracking-[0.2em] text-white">
+                                    Ayu — Girlfriend
                                 </span>
+                            </div>
+
+                            {/* Hover Content */}
+                            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 translate-y-8 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100">
+                                {/* Name */}
+                                <h3 className="text-4xl font-medium tracking-tight text-white sm:text-5xl">
+                                    Ayu Salimah
+                                </h3>
+
+                                <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.2em] text-white/45">
+                                    My Favorite Person
+                                </p>
+
+                                {/* Description */}
+                                <p className="mt-6 max-w-xl text-sm leading-6 text-white/75">
+                                    The person behind my selengean side.
+                                    Someone who makes ordinary days feel a little
+                                    more special, even when we're doing absolutely
+                                    nothing important.
+                                </p>
+
+                                {/* Info */}
+                                <div className="mt-7 grid grid-cols-3 border-t border-white/15">
+                                    {/* Food */}
+                                    <div className="border-r border-white/15 py-4 pr-4">
+                                        <p className="font-mono text-[8px] uppercase tracking-[0.18em] text-white/35">
+                                            Favorite Food
+                                        </p>
+
+                                        <p className="mt-2 text-sm text-white">
+                                            Ramen
+                                        </p>
+                                    </div>
+
+                                    {/* Drink */}
+                                    <div className="border-r border-white/15 px-4 py-4">
+                                        <p className="font-mono text-[8px] uppercase tracking-[0.18em] text-white/35">
+                                            Favorite Drink
+                                        </p>
+
+                                        <p className="mt-2 text-sm text-white">
+                                            Matcha
+                                        </p>
+                                    </div>
+
+                                    {/* Song */}
+                                    <div className="py-4 pl-4">
+                                        <p className="font-mono text-[8px] uppercase tracking-[0.18em] text-white/35">
+                                            Favorite Song
+                                        </p>
+
+                                        <p className="mt-2 text-sm text-white">
+                                            Taylor Swift - Enchanted
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Bottom Line */}
+                                <div className="flex items-center justify-between border-t border-white/15 pt-4">
+                                    <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-white/35">
+                                        Ayu — Girlfriend
+                                    </span>
+
+                                    <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-white/35">
+                                        Katir's Archive
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     );

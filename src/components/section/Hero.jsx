@@ -114,7 +114,7 @@ export default function App() {
                         <div className="mb-7 inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-black/50">
                             <span className="h-2 w-2 rounded-full bg-[#c8102e] shadow-[0_0_0_4px_rgba(200,16,46,0.08)]" />
 
-                            <span>SELENGEAN</span>
+                            <span>01 - SELENGEAN</span>
                         </div>
 
                         {/* Title */}
@@ -139,7 +139,7 @@ export default function App() {
 
                         {/* Social */}
 
-                        <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+                        <div className="mb-4 mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
                             {socials.map((social) => (
                                 <a key={social.label} href={social.href}
                                     className="group relative font-mono text-[9px] uppercase tracking-[0.12em]"

@@ -1,4 +1,5 @@
 import { SectionBadge } from "../ui/section-badge";
+import { SectionTitle } from "../ui/section-title";
 
 export default function About() {
     return (
@@ -6,30 +7,27 @@ export default function About() {
             <div className="mx-auto grid max-w-[1500px] gap-14 lg:grid-cols-2 lg:items-center lg:gap-24">
 
                 {/* Image */}
-                <div className="relative lg:justify-self-center">
-                    <div className="w-full max-w-[400px] overflow-hidden">
+                <div className="relative flex justify-center lg:block lg:justify-self-center">
+                    <div className="w-[65%] max-w-[280px] overflow-hidden sm:w-[55%] sm:max-w-[320px] lg:w-full lg:max-w-[400px]">
                         <img
                             src="/katir.png"
                             alt="Flyaway"
                             className="h-auto w-full object-cover"
                         />
                     </div>
-
-                    <span className="absolute -bottom-6 -left-1 font-mono text-[9px] uppercase tracking-[0.2em] text-black/40">
-                        02 — About Myself
-                    </span>
                 </div>
 
                 {/* Text */}
                 <div className="max-w-xl">
                     <SectionBadge text="Siapa itu Katir?" />
 
-                    <h2 className="text-4xl font-medium leading-[0.95] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
-                        Sekilas tentang
-                        <span className="text-[#c8102e]"> Gua.</span>
-                    </h2>
+                    <SectionTitle blackTitle="Sekilas Tentang" redTitle="Gua" />
 
-                    <div className="mt-10 space-y-6 text-sm leading-7 text-black/60 sm:text-base">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/40">
+                        02 — About Myself
+                    </span>
+
+                    <div className="mt-6 space-y-6 text-sm leading-7 text-black/60 sm:text-base">
                         <p>
                             Gua orang yang suka banget sama hal yang berbau Seni dan Estetika,
                             Seni rupa Lukisan, Seni sastra Puisi, Seni musik paling Favorit, ada
@@ -50,11 +48,11 @@ export default function About() {
 
                         <p>
                             Gua juga suka banget Ngeband, Gua gabungin semua seni estetika dalam Musik,
-                            Lirik, Makna, Variasi Chord, Aransemen, dan Visual album.
+                            Lagu kaya Lirik, Makna, Aransemen, dan Design album.
                         </p>
                     </div>
 
-                    <div className="hidden md:block mt-12 border-t border-black/10 pt-5">
+                    <div className="mt-12 hidden border-t border-black/10 pt-5 md:block">
                         <div className="flex items-center justify-between font-mono text-[8px] uppercase tracking-[0.18em] text-black/35">
                             <span>Drawing / Writing / Music</span>
                             <span>Science / Physics / Biology / Astronomy / Philosophy</span>
