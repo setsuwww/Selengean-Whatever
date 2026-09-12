@@ -7,7 +7,7 @@ export function Navbar() {
     const navItems = [
         { label: "Home", href: "#" },
         { label: "About", href: "#about" },
-        { label: "Favorite", href: "#music" },
+        { label: "Favorite", href: "#favorite" },
         { label: "Galery", href: "#gallery" },
         { label: "Contact", href: "#contact" },
     ];
@@ -56,7 +56,7 @@ export function Navbar() {
 
                         {/* Label */}
                         <div className="hidden sm:block">
-                            <p className="mt-4 max-w-[180px] text-xs leading-5 text-black/45">
+                            <p className="ml-4 mt-4 max-w-[180px] text-xs leading-5 text-black/45">
                                 Explore the sound, story and world behind
                                 Flyaway.
                             </p>
@@ -84,7 +84,7 @@ export function Navbar() {
                                     <ArrowUpRight
                                         size={18}
                                         strokeWidth={1.5}
-                                        className="text-black/30 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#c8102e]"
+                                        className="text-black/30 transition-transform duration-200 group-hover:-translate-x-4 group-hover:text-[#c8102e]"
                                     />
                                 </a>
                             ))}

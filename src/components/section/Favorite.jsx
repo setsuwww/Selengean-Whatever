@@ -96,7 +96,6 @@ export default function Favorite() {
                         </p>
                     </div>
 
-
                     {/* BAND & MUSIC */}
                     <div className="pt-20 lg:pl-16 lg:pt-0">
                         <div className="mb-8">
@@ -126,7 +125,7 @@ export default function Favorite() {
                             {music.map((item, index) => (
                                 <div
                                     key={item.band}
-                                    className="flex items-center justify-between border-b border-black/10 py-4"
+                                    className="flex items-center justify-between border-b border-black/10 py-4 "
                                 >
                                     <div className="flex items-center gap-5">
                                         <span className="font-mono text-[9px] text-white p-2 bg-blue-500">
@@ -159,7 +158,7 @@ export default function Favorite() {
 
                         {/* Description */}
                         <div className="max-w-lg">
-                            <h3 className="mt-8 text-2xl font-medium tracking-tight">
+                            <h3 className="mt-8 text-xl font-medium tracking-tight px-2 bg-yellow-100 text-yellow-600 w-fit">
                                 Favorite Person
                             </h3>
 
@@ -198,7 +197,7 @@ export default function Favorite() {
                             <img
                                 src="/ayu.jpg"
                                 alt="Ayu"
-                                className="h-[500px] w-full object-cover grayscale transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
+                                className="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
                             />
 
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />

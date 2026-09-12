@@ -99,15 +99,7 @@ export default function App() {
             </div>
 
             <div className="relative mx-auto flex min-h-screen max-w-[1500px] flex-col px-6 py-6 sm:px-10 lg:px-16">
-                {/* =====================================================
-                    HERO
-                ===================================================== */}
-
                 <section className="grid flex-1 items-center gap-16 py-16 lg:grid-cols-[1fr_0.85fr] lg:gap-24 lg:py-20">
-                    {/* =================================================
-                        LEFT CONTENT
-                    ================================================= */}
-
                     <div className="max-w-2xl">
                         {/* Badge */}
 
@@ -119,17 +111,17 @@ export default function App() {
 
                         {/* Title */}
 
-                        <h1 className="text-[clamp(2.5rem,14vw,8rem)] font-black leading-[0.92] tracking-[-0.045em]">
-                            <span className="block">HALO</span>
+                        <h1 className="text-[clamp(2.5rem,14vw,8rem)] font-black leading-[0.82] tracking-tighter">
+                            <span className="block">Halo</span>
 
-                            <span className="relative block text-[#c8102e]">
-                                TEMANKU
+                            <span className="block text-[#c8102e]">
+                                Semuanya.
                             </span>
                         </h1>
 
                         {/* Description */}
 
-                        <p className="mt-6 lg:mt-10 max-w-lg text-sm leading-7 text-black/55 sm:text-[15px]">
+                        <p className="mt-6 lg:mt-10 max-w-lg leading-7 text-black/55 text-sm  sm:text-md">
                             Gua Rifqi, lu pada bisa panggil gw Katir,
                             Di kesempatan kali ini Gua kaga mau Showcase
                             Project, Skill dan Apapun itu yang bersifat formal,
@@ -157,10 +149,6 @@ export default function App() {
                     ================================================= */}
 
                     <div className="relative mx-auto w-full max-w-[360px] lg:mx-0 lg:ml-auto">
-                        {/* =================================================
-                            MUSIC
-                        ================================================= */}
-
                         <div className="relative">
                             {/* =================================================
                                 ALBUM COVER
@@ -179,7 +167,7 @@ export default function App() {
 
                                 {/* Album label */}
 
-                                <div className="absolute bottom-0 left-0 bg-[#c8102e] p-2 font-mono text-[8px] uppercase tracking-[0.16em]">
+                                <div className="absolute bottom-0 left-0 bg-[#c8102e] text-white p-2 font-mono text-[8px] uppercase tracking-[0.16em]">
                                     {track.album}
                                 </div>
 
@@ -201,7 +189,7 @@ export default function App() {
                                             Favorite Music
                                         </p>
 
-                                        <h2 className="truncate text-xl font-bold tracking-[-0.04em] sm:text-2xl">
+                                        <h2 className="mt-2 truncate text-xl font-bold tracking-[-0.04em] sm:text-2xl">
                                             {track.title}
                                         </h2>
 
@@ -257,7 +245,7 @@ export default function App() {
                                         aria-label="Seek audio" className="absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none bg-transparent opacity-0" />
 
                                     {/* Progress dot */}
-                                    <div className="pointer-events-none absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#c8102e]"
+                                    <div className="pointer-events-none absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 bg-[#c8102e]"
                                         style={{
                                             left: `${progress}%`,
                                         }}

@@ -3,3 +3,16 @@
 @theme {
     --color-maroon: #c8102e;
 }
+
+@layer base {
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('/fonts/Montserrat-VariableFont_opsz,wght.ttf') format('truetype');
+        font-weight: 400 700;
+        font-style: normal;
+    }
+
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
