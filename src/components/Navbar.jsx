@@ -7,9 +7,9 @@ export function Navbar() {
     const navItems = [
         { label: "Home", href: "#" },
         { label: "About", href: "#about" },
-        { label: "Favorite", href: "#favorite" },
-        { label: "Galery", href: "#gallery" },
-        { label: "Contact", href: "#contact" },
+        { label: "Favorites", href: "#favorites" },
+        { label: "Stories", href: "#stories" },
+        { label: "Archives", href: "#archives" },
     ];
 
     return (

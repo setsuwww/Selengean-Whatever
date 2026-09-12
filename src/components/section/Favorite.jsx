@@ -5,15 +5,15 @@ import { SectionTitle } from "../ui/section-title";
 export default function Favorite() {
     const foods = [
         {
-            image: "/favorite-food-1.jpg",
+            image: "/food/coffee.png",
             name: "Coffee",
         },
         {
-            image: "/favorite-food-2.jpg",
+            image: "/food/noodles.png",
             name: "Noodles",
         },
         {
-            image: "/favorite-food-3.jpg",
+            image: "/food/friedrice.png",
             name: "Fried Rice",
         },
     ];
@@ -42,9 +42,9 @@ export default function Favorite() {
 
                 {/* Section Header */}
                 <div className="mb-20 border-b border-black/15 pb-5">
-                    <SectionBadge text="Apa si Favorit gua?" />
+                    <SectionBadge text="Yang gua Demen" />
 
-                    <SectionTitle blackTitle="Favorit" redTitle="Gua" />
+                    <SectionTitle blackTitle="Hal Favorit" redTitle="Gua" />
 
                     <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/40">
                         03 — Favorite Things
@@ -149,7 +149,6 @@ export default function Favorite() {
                         </div>
                     </div>
                 </div>
-
 
                 {/* FAVORITE PERSON */}
                 <div className="mt-24 border-t border-black/15 pt-5">
