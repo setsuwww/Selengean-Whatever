@@ -39,55 +39,98 @@ export default function Stories() {
                     </span>
                 </div>
 
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-3">
-                    {Array.from({ length: 9 }).map((_, index) => {
-                        const story = stories.find((item) => item.position === index);
+                <div className="mx-auto mt-16 max-w-[1000px]">
+                    <div className="grid grid-cols-1 md:grid-cols-3">
+                        {Array.from({ length: 9 }).map((_, index) => {
+                            const story = stories.find(
+                                (item) => item.position === index
+                            );
 
-                        return (
-                            <div key={index}
-                                className={["aspect-square border-black/10",
-                                    "border-l border-t", index % 3 === 2 ? "md:border-r" : "", index >= 6
-                                        ? "md:border-b" : "",
-                                ].join(" ")}
-                            >
-                                {story && (
-                                    <article className="flex h-full flex-col justify-between p-5 sm:p-7 lg:p-8">
-                                        <span className="w-fit p-2 font-mono text-[10px] tracking-[0.2em] text-yellow-600 bg-yellow-100">
-                                            {story.number}
-                                        </span>
+                            return (
+                                <div
+                                    key={index}
+                                    className={[
+                                        "hidden md:block md:aspect-square",
 
-                                        <div className="flex items-start gap-2">
-                                            <span
-                                                aria-hidden="true"
-                                                className="font-serif text-3xl leading-none text-[#c8102e] sm:text-4xl"
-                                            >
-                                                “
+                                        story
+                                            ? "border-2 border-black bg-white"
+                                            : [
+                                                "border border-black/10",
+                                                "bg-neutral-100",
+                                                "bg-[linear-gradient(135deg,rgba(0,0,0,0.06)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.06)_50%,rgba(0,0,0,0.06)_75%,transparent_75%)]",
+                                                "bg-[length:8px_8px]",
+                                            ].join(" "),
+
+                                        index % 3 === 2
+                                            ? "md:border-r-2"
+                                            : "",
+
+                                        index >= 6
+                                            ? "md:border-b-2"
+                                            : "",
+                                    ].join(" ")}
+                                >
+                                    {story && (
+                                        <article className="flex h-full flex-col justify-between p-5 lg:p-6">
+                                            <span className="w-fit bg-yellow-100 p-2 font-mono text-[9px] tracking-[0.2em] text-yellow-600">
+                                                {story.number}
                                             </span>
 
-                                            <p className={`font-serif font-base leading-14 text-black ${story.size}`}>
-                                                {story.text}
-                                            </p>
+                                            <div className="flex items-start gap-2">
+                                                <span
+                                                    aria-hidden="true"
+                                                    className="font-serif text-2xl leading-none text-[#c8102e] lg:text-3xl"
+                                                >
+                                                    “
+                                                </span>
 
+                                                <p className="font-serif text-xl leading-[1.15] text-black lg:text-2xl">
+                                                    {story.text}
+                                                </p>
+                                            </div>
 
-                                        </div>
+                                            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-blue-600">
+                                                Fragment {story.number}
+                                            </span>
+                                        </article>
+                                    )}
+                                </div>
+                            );
+                        })}
 
-                                        <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-blue-600">
-                                            Fragment {story.number}
+                        {/* Mobile */}
+                        <div className="flex flex-col items-center gap-5 md:hidden">
+                            {stories.map((story) => (
+                                <article
+                                    key={story.number}
+                                    className="flex aspect-square w-[75%] max-w-[280px] flex-col justify-between border-2 border-black bg-white p-5"
+                                >
+                                    <span className="w-fit bg-yellow-100 p-2 font-mono text-[9px] tracking-[0.2em] text-yellow-600">
+                                        {story.number}
+                                    </span>
+
+                                    <div className="flex items-start gap-2">
+                                        <span
+                                            aria-hidden="true"
+                                            className="font-serif text-2xl leading-none text-[#c8102e]"
+                                        >
+                                            “
                                         </span>
-                                    </article>
-                                )}
-                            </div>
-                        );
-                    })}
+
+                                        <p className="font-serif text-xl leading-[1.15] text-black">
+                                            {story.text}
+                                        </p>
+                                    </div>
+
+                                    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-blue-600">
+                                        Fragment {story.number}
+                                    </span>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
-                <div className="border-x border-b border-black/10 px-5 py-6 sm:px-7 lg:px-8">
-                    <p className="max-w-2xl text-sm leading-7 text-black/55 sm:text-base">
-                        Not everything that happened to me was good.
-                        But almost everything left something behind —
-                        a lesson, a habit, a song, or a story worth remembering.
-                    </p>
-                </div>
             </div>
         </section>
     );
