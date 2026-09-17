@@ -47,7 +47,7 @@ export default function Favorite() {
                     <SectionTitle blackTitle="Hal Favorit" redTitle="Gua" />
 
                     <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/40">
-                        03 — Favorite Things
+                        03 — Favorites
                     </span>
                 </div>
 

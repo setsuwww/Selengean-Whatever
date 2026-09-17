@@ -5,19 +5,19 @@ export default function Stories() {
     const stories = [
         {
             number: "01",
-            text: "Coba cari kerjaan, daripada kerjaan lu ngejelekin gua mulu.",
+            text: "Kalo gak bisa jadi orang baik, jangan jadi orang jahat.",
             size: "text-2xl sm:text-3xl",
             position: 0,
         },
         {
             number: "02",
-            text: "Terserah, Lu ngebacot gua Tuli, Lu julid gua Buta, Percuma.",
+            text: "Kita tidak akan pernah merasa cukup jika terus membandingkan diri.",
             size: "text-2xl sm:text-3xl",
             position: 4,
         },
         {
             number: "03",
-            text: "Bacotan lu ga ada damagenya pisan, coba beli Berserker Fury.",
+            text: "Titik tertinggi dari kebahagiaan adalah Merasa cukup.",
             size: "text-2xl sm:text-3xl",
             position: 8,
         },
@@ -32,10 +32,10 @@ export default function Stories() {
                 <div className="mb-20">
                     <SectionBadge text="Fondasi Hidup gua" />
 
-                    <SectionTitle blackTitle="Kata-kata bertahan" redTitle="Hidup" />
+                    <SectionTitle blackTitle="Tetap" redTitle="Hidup" />
 
                     <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/40">
-                        04 - My Principal
+                        04 - Stories
                     </span>
                 </div>
 
