@@ -56,7 +56,7 @@ export default function Stories() {
                                             ? "border-2 border-black bg-white"
                                             : [
                                                 "border border-black/10",
-                                                "bg-neutral-100",
+                                                "bg-olive-100",
                                                 "bg-[linear-gradient(135deg,rgba(0,0,0,0.06)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.06)_50%,rgba(0,0,0,0.06)_75%,transparent_75%)]",
                                                 "bg-[length:8px_8px]",
                                             ].join(" "),
@@ -79,7 +79,7 @@ export default function Stories() {
                                             <div className="flex items-start gap-2">
                                                 <span
                                                     aria-hidden="true"
-                                                    className="font-serif text-2xl leading-none text-[#c8102e] lg:text-3xl"
+                                                    className="font-serif text-2xl leading-none text-maroon lg:text-3xl"
                                                 >
                                                     “
                                                 </span>
@@ -112,7 +112,7 @@ export default function Stories() {
                                     <div className="flex items-start gap-2">
                                         <span
                                             aria-hidden="true"
-                                            className="font-serif text-2xl leading-none text-[#c8102e]"
+                                            className="font-serif text-2xl leading-none text-maroon"
                                         >
                                             “
                                         </span>

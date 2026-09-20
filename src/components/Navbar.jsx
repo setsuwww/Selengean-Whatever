@@ -84,7 +84,7 @@ export function Navbar() {
                                     <ArrowUpRight
                                         size={18}
                                         strokeWidth={1.5}
-                                        className="text-black/30 transition-transform duration-200 group-hover:-translate-x-4 group-hover:text-[#c8102e]"
+                                        className="text-black/30 transition-transform duration-200 group-hover:-translate-x-4 group-hover:text-maroon"
                                     />
                                 </a>
                             ))}

@@ -104,7 +104,7 @@ export default function App() {
                         {/* Badge */}
 
                         <div className="mb-7 inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-black/50">
-                            <span className="h-2 w-2 rounded-full bg-[#c8102e] shadow-[0_0_0_4px_rgba(200,16,46,0.08)]" />
+                            <span className="h-2 w-2 rounded-full bg-maroon shadow-[0_0_0_4px_rgba(200,16,46,0.08)]" />
 
                             <span>01 - SELENGEAN</span>
                         </div>
@@ -114,7 +114,7 @@ export default function App() {
                         <h1 className="text-[clamp(2.5rem,14vw,8rem)] font-black leading-[0.82] tracking-tighter">
                             <span className="block">Halo</span>
 
-                            <span className="block text-[#c8102e]">
+                            <span className="block text-maroon">
                                 Semuanya.
                             </span>
                         </h1>
@@ -138,7 +138,7 @@ export default function App() {
                                 >
                                     {social.label}
 
-                                    <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#c8102e] transition-all duration-300 group-hover:w-full" />
+                                    <span className="absolute -bottom-1 left-0 h-px w-0 bg-maroon transition-all duration-300 group-hover:w-full" />
                                 </a>
                             ))}
                         </div>
@@ -154,7 +154,7 @@ export default function App() {
                                 ALBUM COVER
                             ================================================= */}
 
-                            <div className="group relative aspect-square overflow-hidden bg-neutral-900">
+                            <div className="group relative aspect-square overflow-hidden bg-olive-900">
                                 <img src={track.cover} alt={`${track.album} cover`}
                                     className={`h-full w-full object-cover transition duration-700 ${isPlaying
                                         ? "scale-[1.035]" : "scale-100 group-hover:scale-[1.04]"
@@ -167,7 +167,7 @@ export default function App() {
 
                                 {/* Album label */}
 
-                                <div className="absolute bottom-0 left-0 bg-[#c8102e] text-white p-2 font-mono text-[8px] uppercase tracking-[0.16em]">
+                                <div className="absolute bottom-0 left-0 bg-maroon text-white p-2 font-mono text-[8px] uppercase tracking-[0.16em]">
                                     {track.album}
                                 </div>
 
@@ -185,7 +185,7 @@ export default function App() {
                             <div className="px-1 pt-6">
                                 <div className="flex items-center justify-between gap-5">
                                     <div className="min-w-0">
-                                        <p className="font-mono text-[8px] uppercase tracking-[0.18em] text-[#c8102e]">
+                                        <p className="font-mono text-[8px] uppercase tracking-[0.18em] text-maroon">
                                             Favorite Music
                                         </p>
 
@@ -198,7 +198,7 @@ export default function App() {
                                         <p className="mt-1 flex items-center text-xs text-black/40">
                                             <span>{track.artist}</span>
 
-                                            <span className="mx-1 h-1 w-1 shrink-0 rounded-full bg-[#c8102e]" />
+                                            <span className="mx-1 h-1 w-1 shrink-0 rounded-full bg-maroon" />
 
                                             <span>{track.album}</span>
                                         </p>
@@ -210,7 +210,7 @@ export default function App() {
 
                                     <button onClick={togglePlay} aria-label={isPlaying ? "Pause" : "Play"}
                                         className={`grid h-10 w-10 shrink-0 place-items-center rounded-full transition-all duration-300 ${isPlaying
-                                            ? "bg-[#c8102e] text-white" : "bg-black text-white hover:bg-[#c8102e]"
+                                            ? "bg-maroon text-white" : "bg-black text-white hover:bg-maroon"
                                             }`}
                                     >
                                         {isPlaying ? (
@@ -234,7 +234,7 @@ export default function App() {
                                     <div className="absolute left-0 right-0 top-1/2 h-[2px] -translate-y-1/2 bg-black/15" />
 
                                     {/* Played timeline */}
-                                    <div className="absolute left-0 top-1/2 h-[2px] -translate-y-1/2 bg-[#c8102e]"
+                                    <div className="absolute left-0 top-1/2 h-[2px] -translate-y-1/2 bg-maroon"
                                         style={{
                                             width: `${progress}%`,
                                         }}
@@ -245,7 +245,7 @@ export default function App() {
                                         aria-label="Seek audio" className="absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none bg-transparent opacity-0" />
 
                                     {/* Progress dot */}
-                                    <div className="pointer-events-none absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 bg-[#c8102e]"
+                                    <div className="pointer-events-none absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 bg-maroon"
                                         style={{
                                             left: `${progress}%`,
                                         }}
