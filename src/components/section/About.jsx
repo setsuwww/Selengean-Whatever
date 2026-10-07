@@ -88,7 +88,7 @@ export default function About() {
                         <img
                             src="/katir.png"
                             alt="Katir"
-                            className="h-auto w-full object-cover rounded-bl-xl"
+                            className="h-auto w-full object-cover rounded-4xl"
                         />
 
                         {/* Inverse Cursor */}

@@ -54,7 +54,7 @@ export default function Favorite() {
                 {/* Favorites */}
                 <div className="grid lg:grid-cols-2">
                     {/* DRINK & FOOD */}
-                    <div className="border-b border-black/15 pb-20 lg:border-r lg:border-b-0 lg:pr-16">
+                    <div className="border-b border-black/15 pb-10 lg:border-r lg:border-b-0 lg:pr-16">
 
                         <div className="mb-8">
                             <h3 className="mt-2 text-2xl font-medium tracking-tight">
@@ -97,7 +97,7 @@ export default function Favorite() {
                     </div>
 
                     {/* BAND & MUSIC */}
-                    <div className="pt-20 lg:pl-16 lg:pt-0">
+                    <div className="pt-10 lg:pl-16 lg:pt-0">
                         <div className="mb-8">
                             <h3 className="mt-2 text-2xl font-medium tracking-tight">
                                 Favorite Band & Music

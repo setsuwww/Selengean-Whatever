@@ -1,35 +1,50 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+
 import { SectionBadge } from "../ui/section-badge";
 import { SectionTitle } from "../ui/section-title";
 
 export default function Stories() {
-    const stories = [
-        {
-            number: "01",
-            text: "Kalo gak bisa jadi orang baik, jangan jadi orang jahat.",
-            size: "text-2xl sm:text-3xl",
-            position: 0,
-        },
-        {
-            number: "02",
-            text: "Kita tidak akan pernah merasa cukup jika terus membandingkan diri.",
-            size: "text-2xl sm:text-3xl",
-            position: 4,
-        },
-        {
-            number: "03",
-            text: "Titik tertinggi dari kebahagiaan adalah Merasa cukup.",
-            size: "text-2xl sm:text-3xl",
-            position: 8,
-        },
-    ];
+    const sectionRef = useRef(null);
+    const blobRef = useRef(null);
+    const blobTwoRef = useRef(null);
+    const quoteRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            // Quote entrance
+            gsap.fromTo(
+                quoteRef.current,
+                {
+                    opacity: 0,
+                    y: 40,
+                    filter: "blur(12px)",
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    duration: 1.2,
+                    ease: "power3.out",
+                    delay: 0.2,
+                }
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
 
     return (
         <section
+            ref={sectionRef}
             id="stories"
-            className="px-6 py-24 sm:px-10 lg:px-16"
+            className="relative overflow-hidden px-6 py-24 sm:px-10 lg:px-16"
         >
             <div className="mx-auto max-w-[1500px]">
-                <div className="mb-20">
+                {/* Header */}
+                <div className="relative z-20 mb-20">
                     <SectionBadge text="Fondasi Hidup gua" />
 
                     <SectionTitle blackTitle="Tetap" redTitle="Hidup" />
@@ -39,98 +54,105 @@ export default function Stories() {
                     </span>
                 </div>
 
-                <div className="mx-auto mt-16 max-w-[1000px]">
-                    <div className="grid grid-cols-1 md:grid-cols-3">
-                        {Array.from({ length: 9 }).map((_, index) => {
-                            const story = stories.find(
-                                (item) => item.position === index
-                            );
+                {/* Quote Stage */}
+                <div className="relative mx-auto flex min-h-[75vh] max-w-[1200px] items-center justify-center overflow-hidden">
+                  {/* Glow container */}
+                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-0 w-0">
+                      <div
+                          className="
+                              absolute
+                              left-0
+                              top-0
+                              h-[280px]
+                              w-[600px]
+                              -translate-x-1/2
+                              -translate-y-1/2
+                              rounded-full
+                              bg-radial from-pink-500/40 to-transparent
+                              blur-[120px]
+                          "
+                      />
+                  </div>
 
-                            return (
-                                <div
-                                    key={index}
-                                    className={[
-                                        "hidden md:block md:aspect-square",
+                    {/* Quote */}
+                    <div className="relative z-10 w-full text-center">
+                        <div className="mb-10 flex items-center justify-center gap-4">
+                            <span className="h-px w-10 bg-black/20" />
 
-                                        story
-                                            ? "border-2 border-black bg-white"
-                                            : [
-                                                "border border-black/10",
-                                                "bg-olive-100",
-                                                "bg-[linear-gradient(135deg,rgba(0,0,0,0.06)_25%,transparent_25%,transparent_50%,rgba(0,0,0,0.06)_50%,rgba(0,0,0,0.06)_75%,transparent_75%)]",
-                                                "bg-[length:8px_8px]",
-                                            ].join(" "),
+                            <span className="font-mono text-[9px] uppercase tracking-widest text-black/40">
+                                Newton · III
+                            </span>
 
-                                        index % 3 === 2
-                                            ? "md:border-r-2"
-                                            : "",
-
-                                        index >= 6
-                                            ? "md:border-b-2"
-                                            : "",
-                                    ].join(" ")}
-                                >
-                                    {story && (
-                                        <article className="flex h-full flex-col justify-between p-5 lg:p-6">
-                                            <span className="w-fit bg-yellow-100 p-2 font-mono text-[9px] tracking-[0.2em] text-yellow-600">
-                                                {story.number}
-                                            </span>
-
-                                            <div className="flex items-start gap-2">
-                                                <span
-                                                    aria-hidden="true"
-                                                    className="font-serif text-2xl leading-none text-maroon lg:text-3xl"
-                                                >
-                                                    “
-                                                </span>
-
-                                                <p className="font-serif text-xl leading-[1.15] text-black lg:text-2xl">
-                                                    {story.text}
-                                                </p>
-                                            </div>
-
-                                            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-blue-600">
-                                                Fragment {story.number}
-                                            </span>
-                                        </article>
-                                    )}
-                                </div>
-                            );
-                        })}
-
-                        {/* Mobile */}
-                        <div className="flex flex-col items-center gap-5 md:hidden">
-                            {stories.map((story) => (
-                                <article
-                                    key={story.number}
-                                    className="flex aspect-square w-[75%] max-w-[280px] flex-col justify-between border-2 border-black bg-white p-5"
-                                >
-                                    <span className="w-fit bg-yellow-100 p-2 font-mono text-[9px] tracking-[0.2em] text-yellow-600">
-                                        {story.number}
-                                    </span>
-
-                                    <div className="flex items-start gap-2">
-                                        <span
-                                            aria-hidden="true"
-                                            className="font-serif text-2xl leading-none text-maroon"
-                                        >
-                                            “
-                                        </span>
-
-                                        <p className="font-serif text-xl leading-[1.15] text-black">
-                                            {story.text}
-                                        </p>
-                                    </div>
-
-                                    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-blue-600">
-                                        Fragment {story.number}
-                                    </span>
-                                </article>
-                            ))}
+                            <span className="h-px w-10 bg-black/20" />
                         </div>
+
+                        <blockquote
+                            ref={quoteRef}
+                            className="mx-auto max-w-[1000px]"
+                        >
+                            <p className="font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.9] tracking-[-0.055em] text-black">
+                                For every action,
+                            </p>
+
+                            <p className="mt-3 font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.9] tracking-[-0.055em] text-maroon italic">
+                                there is an equal
+                            </p>
+
+                            <p className="mt-3 font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.9] tracking-[-0.055em] text-black">
+                                and opposite reaction.
+                            </p>
+                        </blockquote>
+
+                        {/* Author */}
+                        <div className="mt-14">
+                            <div className="mx-auto mb-5 h-px w-8 bg-black/20" />
+
+                            <span className="font-mono text-[9px] uppercase tracking-[0.35em] text-black/40">
+                                Isaac Newton
+                            </span>
+
+                            <p className="mt-2 font-serif text-sm italic text-black/40">
+                                Philosophiæ Naturalis Principia Mathematica
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Bottom indicator */}
+                    <div className="absolute bottom-0 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3">
+                        <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/30">
+                            Keep going
+                        </span>
+
+                        <span className="h-8 w-px bg-black/20" />
                     </div>
                 </div>
 
+                {/* Interpretation */}
+                <div className="relative z-10 mx-auto mt-24 grid max-w-[1000px] grid-cols-1 gap-12 border-t border-black/10 pt-12 md:grid-cols-[0.7fr_1.3fr] md:gap-20">
+                    <div>
+                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">
+                            Fragment 04
+                        </span>
+
+                        <p className="mt-4 font-serif text-2xl leading-tight text-black">
+                            Setiap tindakan
+                            <br />
+                            punya akibat.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p className="font-serif text-xl leading-[1.5] text-black/70 sm:text-2xl">
+                            Tidak ada tindakan yang benar-benar hilang.
+                            <br />
+                            Apa yang kita lakukan akan selalu
+                            <span className="text-maroon">
+                                {" "}
+                                menemukan jalannya untuk kembali.
+                            </span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     );
