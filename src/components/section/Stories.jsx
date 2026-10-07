@@ -8,13 +8,10 @@ import { SectionTitle } from "../ui/section-title";
 
 export default function Stories() {
     const sectionRef = useRef(null);
-    const blobRef = useRef(null);
-    const blobTwoRef = useRef(null);
     const quoteRef = useRef(null);
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            // Quote entrance
             gsap.fromTo(
                 quoteRef.current,
                 {
@@ -43,62 +40,83 @@ export default function Stories() {
             className="relative overflow-hidden px-6 py-24 sm:px-10 lg:px-16"
         >
             <div className="mx-auto max-w-[1500px]">
-                {/* Header */}
-                <div className="relative z-20 mb-20">
-                    <SectionBadge text="Fondasi Hidup gua" />
-
-                    <SectionTitle blackTitle="Tetap" redTitle="Hidup" />
-
-                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/40">
-                        04 - Stories
-                    </span>
-                </div>
-
                 {/* Quote Stage */}
                 <div className="relative mx-auto flex min-h-[75vh] max-w-[1200px] items-center justify-center overflow-hidden">
-                  {/* Glow container */}
-                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-0 w-0">
-                      <div
-                          className="
-                              absolute
-                              left-0
-                              top-0
-                              h-[280px]
-                              w-[600px]
-                              -translate-x-1/2
-                              -translate-y-1/2
-                              rounded-full
-                              bg-radial from-pink-500/40 to-transparent
-                              blur-[120px]
-                          "
-                      />
-                  </div>
 
-                    {/* Quote */}
+                    {/* Quote Background */}
+                    <img
+                        src="/quote-background.png"
+                        alt=""
+                        aria-hidden="true"
+                        className="
+                            pointer-events-none
+                            absolute
+                            left-1/2
+                            top-1/2
+                            z-0
+                            h-[600px]
+                            w-[600px]
+                            -translate-x-1/2
+                            -translate-y-1/2
+                            object-contain
+                            opacity-40
+                        "
+                    />
+
+                    {/* Center Glow */}
+                    <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-0 w-0">
+                        <div
+                            className="
+                                absolute
+                                left-0
+                                top-0
+                                h-[280px]
+                                w-[600px]
+                                -translate-x-1/2
+                                -translate-y-1/2
+                                rounded-full
+                                bg-radial
+                                from-pink-500/40
+                                to-transparent
+                                blur-[120px]
+                            "
+                        />
+                    </div>
+
+                    {/* Quote Content */}
                     <div className="relative z-10 w-full text-center">
-                        <div className="mb-10 flex items-center justify-center gap-4">
-                            <span className="h-px w-10 bg-black/20" />
 
-                            <span className="font-mono text-[9px] uppercase tracking-widest text-black/40">
-                                Newton · III
-                            </span>
+                      <div className="mb-10 flex flex-col items-center">
+                          <img
+                              src="/in.jpg"
+                              alt="Isaac Newton"
+                              className="mb-10 h-15 w-15 object-contain rounded-4xl"
+                          />
 
-                            <span className="h-px w-10 bg-black/20" />
-                        </div>
+                          <div className="flex items-center justify-center gap-4">
+                              <span className="h-px w-10 bg-black/20" />
+
+                              <span className="font-mono text-[9px] uppercase tracking-widest text-black">
+                                  Newton · III
+                              </span>
+
+                              <span className="h-px w-10 bg-black/20" />
+                          </div>
+                      </div>
 
                         <blockquote
                             ref={quoteRef}
                             className="mx-auto max-w-[1000px]"
                         >
-                            <p className="font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.9] tracking-[-0.055em] text-black">
-                                For every action,
+                            <p className="font-serif text-[clamp(3rem,6vw,8rem)] leading-[0.9] tracking-tight text-black">
+                                For every Action
                             </p>
 
-                            <p className="mt-3 font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.9] tracking-[-0.055em] text-maroon italic">
+                            <p className="mt-3 font-jersey text-[clamp(4rem,5vw,7rem)] leading-[0.9] tracking-tight text-maroon">
                                 there is an equal
                             </p>
 
-                            <p className="mt-3 font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.9] tracking-[-0.055em] text-black">
+                            <p className="mt-3 font-jersey text-[clamp(2rem,3vw,4rem)] leading-[0.7] text-maroon/70">
                                 and opposite reaction.
                             </p>
                         </blockquote>
@@ -107,11 +125,11 @@ export default function Stories() {
                         <div className="mt-14">
                             <div className="mx-auto mb-5 h-px w-8 bg-black/20" />
 
-                            <span className="font-mono text-[9px] uppercase tracking-[0.35em] text-black/40">
+                            <span className="font-mono text-[9px] uppercase tracking-[0.35em] text-slate-600">
                                 Isaac Newton
                             </span>
 
-                            <p className="mt-2 font-serif text-sm italic text-black/40">
+                            <p className="mt-2 font-serif text-sm italic text-slate-600">
                                 Philosophiæ Naturalis Principia Mathematica
                             </p>
                         </div>
@@ -120,7 +138,7 @@ export default function Stories() {
                     {/* Bottom indicator */}
                     <div className="absolute bottom-0 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3">
                         <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/30">
-                            Keep going
+                            04 - Stories
                         </span>
 
                         <span className="h-8 w-px bg-black/20" />
@@ -146,7 +164,7 @@ export default function Stories() {
                             Tidak ada tindakan yang benar-benar hilang.
                             <br />
                             Apa yang kita lakukan akan selalu
-                            <span className="text-maroon">
+                            <span className="font-serif text-maroon">
                                 {" "}
                                 menemukan jalannya untuk kembali.
                             </span>

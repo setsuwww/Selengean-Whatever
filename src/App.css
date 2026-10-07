@@ -12,7 +12,18 @@
         font-style: normal;
     }
 
+    @font-face {
+        font-family: 'Jersey10';
+        src: url('/fonts/Jersey10-Regular.ttf') format('truetype');
+        font-weight: 400 700;
+        font-style: normal;
+    }
+
     * {
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .font-jersey {
+        font-family: 'Jersey10', sans-serif;
     }
 }
